@@ -15,8 +15,10 @@ class SearchMuseScore:
 
         # Scrapping with BeautifulSoup
         html_soup = BeautifulSoup(html_doc, 'html.parser')
-        for s in html_soup.find_all('article'):
-            print(s)
+        for article in html_soup.find_all('article'):
+            for a in article.find_all('a'):
+                print(a.text)
+            break
 
 """
 Json file includes:
